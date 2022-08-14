@@ -1,0 +1,1 @@
+# Hytone.Timberborn.StatusHider

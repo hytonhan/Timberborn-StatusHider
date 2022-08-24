@@ -4,8 +4,8 @@ This mod does not hide the status messages from the panel of the left of the UI 
 
 The icons to hide can be selected from the added in-game options panel, or from the plugin configuration file. Example images of the 
 in-game options panel below.
-![Menu1](https://raw.githubusercontent.com/hytonhan/Timberborn-CustomTopBar/master/menu1.png?raw=true)
-![Menu2](https://raw.githubusercontent.com/hytonhan/Timberborn-CustomTopBar/master/menu2.png?raw=true)
+![Menu1](https://raw.githubusercontent.com/hytonhan/Timberborn-CustomTopBar/master/.attachments/menu1.png?raw=true)
+![Menu2](https://raw.githubusercontent.com/hytonhan/Timberborn-CustomTopBar/master/.attachments/menu2.png?raw=true)
 
 # Usage
 Download and install the mod in your preferred way. Then the mod is good to go.

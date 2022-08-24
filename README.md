@@ -22,6 +22,9 @@ github page. Any feedback is highly appreciated!
 # Changelog
 
 # v1.0.0 - 24.8.2022
+- Fixed iamges in readme
+
+# v1.0.0 - 24.8.2022
 - Initial release
 - Added in-game options menu to choose which statuses to hide
 - Will only hide the status icons that are floating above gameobjects

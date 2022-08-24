@@ -16,7 +16,7 @@ namespace Hytone.Timberborn.StatusHider
     {
         public const string PluginId = "hytone.plugins.statushider";
         public const string PluginName = "StatusHider";
-        public const string PluginVersion = "0.1.0";
+        public const string PluginVersion = "1.0.0";
 
         internal static ManualLogSource Log;
         private static Harmony _harmony;
@@ -46,36 +46,36 @@ namespace Hytone.Timberborn.StatusHider
         private static void InitStatusLists()
         {
             BuildingStatusThings.AddRange(
-                            new List<StatusInfo>()
-                            {
-                    new StatusInfo() { ToggleValue = false, Name = "DisableOverloadedWarehouse", Description = "Disable the icon of Overloaded Warehouse.", DefaultValue = false, SpriteName = "OverloadedWarehouse", LocKey = StatusHiderMenu.WarehouseFullOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableNoPower", Description = "Disable the icon of No Power.", DefaultValue = false, SpriteName = "NoPower", LocKey = StatusHiderMenu.NoPowerOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisablePause", Description = "Disable the icon of Paused buildings.", DefaultValue = false, SpriteName = "Pause", LocKey = StatusHiderMenu.PauseOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableUnreachable", Description = "Disable the icon of Unreachable Building.", DefaultValue = false, SpriteName = "UnreachableBuilding", LocKey = StatusHiderMenu.UnreachableOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableEmptyBuilding", Description = "Disable the icon of Empty Building.", DefaultValue = false, SpriteName = "Empty", LocKey = StatusHiderMenu.EmptyBuildingOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableFlooded", Description = "Disable the icon of Flooded Building.", DefaultValue = false, SpriteName = "FloodedBuilding", LocKey = StatusHiderMenu.FloodedOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableNoRecipeAndNothingToDo", Description = "Disable the icon of No Recipe Selected and Nothing To Do.", DefaultValue = false, SpriteName = "NothingToDo", LocKey = StatusHiderMenu.NoRecipeOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableBuildingNeedsWater", Description = "Disable the icon of Building Needs Water.", DefaultValue = false, SpriteName = "BuildingNeedsWater", LocKey = StatusHiderMenu.NeedsWaterOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableLackOfNutrients", Description = "Disable the icon of Lack Of Nutrients.", DefaultValue = false, SpriteName = "LackOfNutrients", LocKey = StatusHiderMenu.LackOfNutrientsOptionLocKey }
-                            }
-                        );
+                new List<StatusInfo>()
+                {
+                    new StatusInfo() { ToggleValue = false, Name = "DisableOverloadedWarehouse", Description = "Disable the icon of Overloaded Warehouse.", DefaultValue = false, SpriteNames = new string[]{"OverloadedWarehouse" }, LocKey = StatusHiderMenu.WarehouseFullOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableNoPower", Description = "Disable the icon of No Power.", DefaultValue = false, SpriteNames = new string[]{"NoPower" }, LocKey = StatusHiderMenu.NoPowerOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisablePause", Description = "Disable the icon of Paused buildings.", DefaultValue = false, SpriteNames = new string[]{"Pause" }, LocKey = StatusHiderMenu.PauseOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableUnreachable", Description = "Disable the icon of Unreachable Building.", DefaultValue = false, SpriteNames = new string[]{"UnreachableBuilding" }, LocKey = StatusHiderMenu.UnreachableOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableEmptyBuilding", Description = "Disable the icon of Empty Building.", DefaultValue = false, SpriteNames = new string[]{"Empty" }, LocKey = StatusHiderMenu.EmptyBuildingOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableFlooded", Description = "Disable the icon of Flooded Building.", DefaultValue = false, SpriteNames = new string[]{"FloodedBuilding" }, LocKey = StatusHiderMenu.FloodedOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableNoRecipeAndNothingToDo", Description = "Disable the icon of No Recipe Selected and Nothing To Do.", DefaultValue = false, SpriteNames = new string[]{"NothingToDo" }, LocKey = StatusHiderMenu.NoRecipeOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableBuildingNeedsWater", Description = "Disable the icon of Building Needs Water.", DefaultValue = false, SpriteNames = new string[]{"BuildingNeedsWater" }, LocKey = StatusHiderMenu.NeedsWaterOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableLackOfNutrients", Description = "Disable the icon of Lack Of Nutrients.", DefaultValue = false, SpriteNames = new string[]{"LackOfNutrients" }, LocKey = StatusHiderMenu.LackOfNutrientsOptionLocKey }
+                }
+            );
 
             CharacterStatuses.AddRange(
                 new List<StatusInfo>()
                 {
-                    new StatusInfo() { ToggleValue = false, Name = "DisableBroken", Description = "Disable the icon of Broken.", DefaultValue = false, SpriteName = "Broken", LocKey = StatusHiderMenu.BrokenOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableBrokenTeeth", Description = "Disable the icon of Broken Teeth.", DefaultValue = false, SpriteName = "BrokenTeeth", LocKey = StatusHiderMenu.BrokenTeethOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableDeath", Description = "Disable the icon of Death.", DefaultValue = false, SpriteName = "Death", LocKey = StatusHiderMenu.DeathOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableExhaustion", Description = "Disable the icon of Exhaustion.", DefaultValue = false, SpriteName = "Exhaustion", LocKey = StatusHiderMenu.ExhaustionOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableFood", Description = "Disable the icon of Hunger.", DefaultValue = false, SpriteName = "Food", LocKey = StatusHiderMenu.FoodOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableInjury", Description = "Disable the icon of Injury.", DefaultValue = false, SpriteName = "Injury", LocKey = StatusHiderMenu.InjuryOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableNoControlSignal", Description = "Disable the icon of No Control Signal.", DefaultValue = false, SpriteName = "NoControlSignal", LocKey = StatusHiderMenu.NoControlSignalOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableOutOfEnergy", Description = "Disable the icon of Out Of Energy.", DefaultValue = false, SpriteName = "OutOfEnergy", LocKey = StatusHiderMenu.OutOfEnergyOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableOutOfFuel", Description = "Disable the icon of Out Of Fuel.", DefaultValue = false, SpriteName = "OutOfFuel", LocKey = StatusHiderMenu.OutOfFuelOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisablePollutedMechanisms", Description = "Disable the icon of Polluted Mechanisms.", DefaultValue = false, SpriteName = "PollutedMechanisms", LocKey = StatusHiderMenu.PollutedMechanismsOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisablePollutionPoisoning", Description = "Disable the icon of Pollution Poisoning.", DefaultValue = false, SpriteName = "PollutionPoisoning", LocKey = StatusHiderMenu.PollutionPoisoningOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableStranded", Description = "Disable the icon of Stranded.", DefaultValue = false, SpriteName = "Stranded", LocKey = StatusHiderMenu.StrandedOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableWater", Description = "Disable the icon of Thirst.", DefaultValue = false, SpriteName = "Water", LocKey = StatusHiderMenu.WaterOptionLocKey }
+                    new StatusInfo() { ToggleValue = false, Name = "DisableBroken", Description = "Disable the icon of Broken.", DefaultValue = false, SpriteNames = new string[]{"Broken" }, LocKey = StatusHiderMenu.BrokenOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableBrokenTeeth", Description = "Disable the icon of Broken Teeth.", DefaultValue = false, SpriteNames = new string[]{"BrokenTeeth" }, LocKey = StatusHiderMenu.BrokenTeethOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableDeath", Description = "Disable the icon of Death.", DefaultValue = false, SpriteNames = new string[]{"Death" }, LocKey = StatusHiderMenu.DeathOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableExhaustion", Description = "Disable the icon of Exhaustion.", DefaultValue = false, SpriteNames = new string[]{"Exhaustion" }, LocKey = StatusHiderMenu.ExhaustionOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableFood", Description = "Disable the icon of Hunger.", DefaultValue = false, SpriteNames = new string[]{"Food", "Hunger" }, LocKey = StatusHiderMenu.FoodOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableInjury", Description = "Disable the icon of Injury.", DefaultValue = false, SpriteNames = new string[]{"Injury" }, LocKey = StatusHiderMenu.InjuryOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableNoControlSignal", Description = "Disable the icon of No Control Signal.", DefaultValue = false, SpriteNames = new string[]{"NoControlSignal" }, LocKey = StatusHiderMenu.NoControlSignalOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableOutOfEnergy", Description = "Disable the icon of Out Of Energy.", DefaultValue = false, SpriteNames = new string[]{"OutOfEnergy" }, LocKey = StatusHiderMenu.OutOfEnergyOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableOutOfFuel", Description = "Disable the icon of Out Of Fuel.", DefaultValue = false, SpriteNames = new string[]{"OutOfFuel" }, LocKey = StatusHiderMenu.OutOfFuelOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisablePollutedMechanisms", Description = "Disable the icon of Polluted Mechanisms.", DefaultValue = false, SpriteNames = new string[]{"PollutedMechanisms" }, LocKey = StatusHiderMenu.PollutedMechanismsOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisablePollutionPoisoning", Description = "Disable the icon of Pollution Poisoning.", DefaultValue = false, SpriteNames = new string[]{"PollutionPoisoning" }, LocKey = StatusHiderMenu.PollutionPoisoningOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableStranded", Description = "Disable the icon of Stranded.", DefaultValue = false, SpriteNames = new string[]{"Stranded" }, LocKey = StatusHiderMenu.StrandedOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableWater", Description = "Disable the icon of Thirst.", DefaultValue = false, SpriteNames = new string[]{"Water", "Thirst" }, LocKey = StatusHiderMenu.WaterOptionLocKey }
                 }
             );
         }
@@ -98,17 +98,17 @@ namespace Hytone.Timberborn.StatusHider
         /// <summary>
         /// Initialized a single config entry on the Config
         /// </summary>
-        /// <param name="flagField"></param>
+        /// <param name="toggleValueField"></param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="defaultValue"></param>
-        public static void InitConfig(ref bool flagField, string name, string description, bool defaultValue)
+        public static void InitConfig(ref bool toggleValueField, string name, string description, bool defaultValue)
         {
-            flagField = ConfigFile.Bind("General",
-                                        name,
-                                        defaultValue,
-                                        description)
-                                  .Value;
+            toggleValueField = ConfigFile.Bind("General",
+                                                name,
+                                                defaultValue,
+                                                description)
+                                          .Value;
         }
 
         /// <summary>

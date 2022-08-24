@@ -1,0 +1,10 @@
+{
+  "name": "StatusHider",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/hytonhan/Timberborn-StatusHider",
+  "description": "Hide unwanted floating status icons.",
+  "dependencies": [
+    "BepInEx-BepInExPack_Timberborn-5.4.19",
+    "Timberborn_Central-TimberAPI-0.3.2"
+  ]
+}

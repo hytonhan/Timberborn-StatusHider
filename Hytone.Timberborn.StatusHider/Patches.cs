@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System;
 using Timberborn.StatusSystem;
 
 namespace Hytone.Timberborn.StatusHider
@@ -22,14 +23,14 @@ namespace Hytone.Timberborn.StatusHider
             {
                 foreach (var buildingThings in StatusHiderPlugin.BuildingStatusThings)
                 {
-                    if (ShouldHideIcon(status, buildingThings.SpriteName, buildingThings.ToggleValue, __instance))
+                    if (ShouldHideIcon(status, buildingThings.SpriteNames, buildingThings.ToggleValue, __instance))
                     {
                         return false;
                     }
                 }
                 foreach (var characterThings in StatusHiderPlugin.CharacterStatuses)
                 {
-                    if (ShouldHideIcon(status, characterThings.SpriteName, characterThings.ToggleValue, __instance))
+                    if (ShouldHideIcon(status, characterThings.SpriteNames, characterThings.ToggleValue, __instance))
                     {
                         return false;
                     }
@@ -41,17 +42,18 @@ namespace Hytone.Timberborn.StatusHider
             /// Hides the icon above a entity if it should be hidden.
             /// </summary>
             /// <param name="status"></param>
-            /// <param name="spriteName"></param>
+            /// <param name="spriteNames"></param>
             /// <param name="toggleValue"></param>
             /// <param name="__instance"></param>
             /// <returns></returns>
             private static bool ShouldHideIcon(
                 StatusInstance status,
-                string spriteName,
+                string[] spriteNames,
                 bool toggleValue,
                 StatusIconCycler __instance)
             {
-                if (status.Sprite.name == spriteName && toggleValue)
+                // status.Sprite.name == spriteNames  
+                if (Array.IndexOf(spriteNames, status.Sprite.name) > -1&& toggleValue)
                 {
                     if (__instance._shownIconStatus == status)
                     {

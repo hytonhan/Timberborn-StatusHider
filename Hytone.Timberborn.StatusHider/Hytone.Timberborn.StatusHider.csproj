@@ -10,4 +10,8 @@
     <PackageReference Include="TimberAPI" Version="0.3.3" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(ProjectDir)\..\README.md $(ProjectDir)\package&#xD;&#xA;copy $(OutDir)$(AssemblyName).dll $(ProjectDir)\package\plugins" />
+  </Target>
+
 </Project>

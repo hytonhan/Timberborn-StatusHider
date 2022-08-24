@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hytone.Timberborn.StatusHider", "Hytone.Timberborn.StatusHider\Hytone.Timberborn.StatusHider.csproj", "{6AB4FAAD-D93E-46E6-9102-01AB6EA402A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D70218C0-8283-41ED-A6E3-94AFE99BDE11}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,7 @@
 ﻿using System;
 using Timberborn.CoreUI;
 using TimberbornAPI.UIBuilderSystem;
+using TimberbornAPI.UIBuilderSystem.ElementSystem;
 using UnityEngine.UIElements;
 using static UnityEngine.UIElements.Length.Unit;
 
@@ -65,40 +66,63 @@ namespace Hytone.Timberborn.StatusHider.UI
                 .SetWidth(new Length(600, Pixel))
                 .ModifyScrollView(builder => builder.SetName("elementPreview"));
 
-            var sunOptionsContent = _uiBuilder.CreateComponentBuilder().CreateVisualElement();
-            sunOptionsContent.AddPreset(factory => factory.Labels().DefaultHeader(MenuHeaderLocKey, builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
-
-            // Building status toggles
-            sunOptionsContent.AddPreset(factory => factory.Labels().DefaultBig(BuildingsHeaderLocKey, builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
-            foreach(var thing in StatusHiderPlugin.BuildingStatusThings)
-            {
-                sunOptionsContent.AddPreset(factory => factory.Toggles().Checkbox(locKey: thing.LocKey, name: thing.ToggleName, builder: builder => builder.SetStyle(style => style.marginBottom = new Length(10, Pixel))));
-            }
-
-            // Char status toggles
-            sunOptionsContent.AddPreset(factory => factory.Labels().DefaultBig(CharactersHeaderLocKey, builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
-            foreach (var thing in StatusHiderPlugin.CharacterStatuses)
-            {
-                sunOptionsContent.AddPreset(factory => factory.Toggles().Checkbox(locKey: thing.LocKey, name: thing.ToggleName, builder: builder => builder.SetStyle(style => style.marginBottom = new Length(10, Pixel))));
-            }
-
-            boxBuilder.AddComponent(sunOptionsContent.Build());
+            VisualElementBuilder menuContent = InitMenuPanelWithHeader();
+            AddBuildinTogglesToMenuContent(menuContent);
+            AddCharacterToggleToMenuContent(menuContent);
+            boxBuilder.AddComponent(menuContent.Build());
 
             VisualElement root = boxBuilder.AddCloseButton("CloseButton").SetBoxInCenter().AddHeader(MenuHeaderLocKey).BuildAndInitialize();
             root.Q<Button>("CloseButton").clicked += OnUICancelled;
 
-            foreach(var thing in StatusHiderPlugin.BuildingStatusThings)
+            foreach (var thing in StatusHiderPlugin.BuildingStatusThings)
             {
                 root.Q<Toggle>(thing.ToggleName).RegisterValueChangedCallback((changeEvent) => OptionToggled(thing, changeEvent));
                 root.Q<Toggle>(thing.ToggleName).value = thing.ToggleValue;
             }
-            foreach(var thing in StatusHiderPlugin.CharacterStatuses)
+            foreach (var thing in StatusHiderPlugin.CharacterStatuses)
             {
                 root.Q<Toggle>(thing.ToggleName).RegisterValueChangedCallback((changeEvent) => OptionToggled(thing, changeEvent));
                 root.Q<Toggle>(thing.ToggleName).value = thing.ToggleValue;
             }
 
             return root;
+        }
+
+        /// <summary>
+        /// Adds Character related Status toggles to menu panel
+        /// </summary>
+        /// <param name="menuContent"></param>
+        private static void AddCharacterToggleToMenuContent(VisualElementBuilder menuContent)
+        {
+            menuContent.AddPreset(factory => factory.Labels().DefaultBig(CharactersHeaderLocKey, builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
+            foreach (var thing in StatusHiderPlugin.CharacterStatuses)
+            {
+                menuContent.AddPreset(factory => factory.Toggles().Checkbox(locKey: thing.LocKey, name: thing.ToggleName, builder: builder => builder.SetStyle(style => style.marginBottom = new Length(10, Pixel))));
+            }
+        }
+
+        /// <summary>
+        /// Adds Building realted Status toggles to menu panel
+        /// </summary>
+        /// <param name="menuContent"></param>
+        private static void AddBuildinTogglesToMenuContent(VisualElementBuilder menuContent)
+        {
+            menuContent.AddPreset(factory => factory.Labels().DefaultBig(BuildingsHeaderLocKey, builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
+            foreach (var thing in StatusHiderPlugin.BuildingStatusThings)
+            {
+                menuContent.AddPreset(factory => factory.Toggles().Checkbox(locKey: thing.LocKey, name: thing.ToggleName, builder: builder => builder.SetStyle(style => style.marginBottom = new Length(10, Pixel))));
+            }
+        }
+
+        /// <summary>
+        /// Initializes a menu panel with a header for Status toggles
+        /// </summary>
+        /// <returns></returns>
+        private VisualElementBuilder InitMenuPanelWithHeader()
+        {
+            var menuContent = _uiBuilder.CreateComponentBuilder().CreateVisualElement();
+            menuContent.AddPreset(factory => factory.Labels().DefaultHeader(MenuHeaderLocKey, builder: builder => builder.SetStyle(style => { style.alignSelf = Align.Center; style.marginBottom = new Length(10, Pixel); })));
+            return menuContent;
         }
 
         /// <summary>

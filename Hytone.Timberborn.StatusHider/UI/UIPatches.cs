@@ -34,6 +34,7 @@ namespace Hytone.Timberborn.StatusHider.UI
         {
             public static void Postfix(ref VisualElement __result)
             {
+                var loc = TimberAPI.DependencyContainer.GetInstance<ILoc>();
                 VisualElement root = __result.Query("MainMenuPanel");
                 Button button = new Button() { classList = { "menu-button" } };
                 button.text = loc.T("statushider.menuheader");

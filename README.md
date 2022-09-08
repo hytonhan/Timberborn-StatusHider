@@ -21,6 +21,9 @@ github page. Any feedback is highly appreciated!
 
 # Changelog
 
+## v1.1.1 - 8.9.2022
+- Added japanese translations (thanks you sukunabikona!)
+
 ## v1.1.0 - 8.9.2022
 - Moved localization lines from code to loc file
 - Removed Broken, PollutedMechanism and PollutionPoisoning as they were removed from the game

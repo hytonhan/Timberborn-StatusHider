@@ -1,0 +1,26 @@
+﻿ID,Text,Comment
+statushider.menuheader,通知アイコン非表示設定, - Status Hider Options
+statushider.buildingsheader,建物関連で非表示するアイコンを選択してください。,全てに「非表示にする」をつけると可読性が下がるのでここにまとめた。 - Building Statuses
+statushider.charactersheader,住民関連で非表示するアイコンを選択してください。,全てに「非表示にする」をつけると可読性が下がるのでここにまとめた。 - Character Statuses
+statushider.warehousefulloption,「これ以上収納できません」, - Disable Warehouse Full icons.
+statushider.disablepauseoption,「停止中」, - Disable Paused bulding icons.
+statushider.nopoweroption,「動力がない」, - Disable Unpowered building icons.
+statushider.ureachableoption,「どの地区の中心とも道でつながっていません」, - Disable Unreachable building icons.
+statushider.emptybuildingoption,「現在この建物を空にしています」, - Disable Empty Building icons.
+statushider.floodedoption,「浸水した」, - Disable Flooded building icons.
+statushider.norecipeoption,「範囲内の仕事無し」/「レシピが選択されていません」, - Disable Nothing To Do/No Recipe icons.
+statushider.needswateroption,「より深い水が必要です」, - Disable Needs water icons.
+statushider.foodoption,「飢えている」, - Disable Hunger icons.
+statushider.wateroption,「喉が乾いた」, - Disable Thirst icons.
+statushider.brokenoption,「壊れた」, - Disable Broken icons.
+statushider.brokenteethoption,「歯が欠けた」, - Disable Broken Teeth icons.
+statushider.deathoption,「死亡」, - Disable Death icons.
+statushider.exhaustionoption,「疲弊している」, - Disable Exhaustion icons.
+statushider.lackofnutrientsoption,「繁殖が停滞。栄養待ち」, - Disable Lack of Nutrients icons.
+statushider.injuryoption,「怪我をした」, - Disable Injury icons.
+statushider.nocontrolsignaloption,「制御タワーの信号がない」, - 未使用？ - Disable No Control Signal icons.
+statushider.outofenergyoption,「エネルギー切れ」, - Disable Out of Energy icons.
+statushider.outoffueloption,「燃料切れ」, - Disable Out of Fuel icons.
+statushider.pollutedmechanismsoption,「からくりが汚れた」, - 未使用？ - Disable Polluted Mechanisms icons.
+statushider.pollutionpoisoningoption,「汚染で害を受けた」, - 未使用？ - Disable Pollution Poisoning icons.
+statushider.strandedoption,「立ち往生」, - Disable Stranded icons.

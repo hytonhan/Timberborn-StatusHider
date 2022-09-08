@@ -1,0 +1,26 @@
+﻿ID,Text,Comment
+statushider.menuheader,Status Hider Options
+statushider.buildingsheader,Building Statuses
+statushider.charactersheader,Character Statuses
+statushider.warehousefulloption,Disable Warehouse Full icons.
+statushider.disablepauseoption,Disable Paused bulding icons.
+statushider.nopoweroption,Disable Unpowered building icons.
+statushider.ureachableoption,Disable Unreachable building icons.
+statushider.emptybuildingoption,Disable Empty Building icons.
+statushider.floodedoption,Disable Flooded building icons.
+statushider.norecipeoption,Disable Nothing To Do/No Recipe icons.
+statushider.needswateroption,Disable Needs water icons.
+statushider.foodoption,Disable Hunger icons.
+statushider.wateroption,Disable Thirst icons.
+statushider.brokenoption,Disable Broken icons.
+statushider.brokenteethoption,Disable Broken Teeth icons.
+statushider.deathoption,Disable Death icons.
+statushider.exhaustionoption,Disable Exhaustion icons.
+statushider.lackofnutrientsoption,Disable Lack of Nutrients icons.
+statushider.injuryoption,Disable Injury icons.
+statushider.nocontrolsignaloption,Disable No Control Signal icons.
+statushider.outofenergyoption,Disable Out of Energy icons.
+statushider.outoffueloption,Disable Out of Fuel icons.
+statushider.pollutedmechanismsoption,Disable Polluted Mechanisms icons.
+statushider.pollutionpoisoningoption,Disable Pollution Poisoning icons.
+statushider.strandedoption,Disable Stranded icons.

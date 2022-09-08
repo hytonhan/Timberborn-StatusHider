@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
+using Timberborn.Localization;
 using Timberborn.MainMenuScene;
 using Timberborn.Options;
+using TimberbornAPI;
 using UnityEngine.UIElements;
 
 namespace Hytone.Timberborn.StatusHider.UI
@@ -15,9 +17,10 @@ namespace Hytone.Timberborn.StatusHider.UI
         {
             public static void Postfix(ref VisualElement __result)
             {
+                var loc = TimberAPI.DependencyContainer.GetInstance<ILoc>();
                 VisualElement root = __result.Query("OptionsBox");
                 Button button = new Button() { classList = { "menu-button" } };
-                button.text = "Status Hider Options";
+                button.text = loc.T("statushider.menuheader");
                 button.clicked += StatusHiderMenu.OpenOptionsDelegate;
                 root.Insert(6, button);
             }
@@ -33,7 +36,7 @@ namespace Hytone.Timberborn.StatusHider.UI
             {
                 VisualElement root = __result.Query("MainMenuPanel");
                 Button button = new Button() { classList = { "menu-button" } };
-                button.text = "Status Hider Options";
+                button.text = loc.T("statushider.menuheader");
                 button.clicked += StatusHiderMenu.OpenOptionsDelegate;
                 root.Insert(6, button);
             }

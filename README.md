@@ -21,10 +21,15 @@ github page. Any feedback is highly appreciated!
 
 # Changelog
 
-# v1.0.0 - 24.8.2022
-- Fixed iamges in readme
+## v1.1.0 - 8.9.2022
+- Moved localization lines from code to loc file
+- Removed Broken, PollutedMechanism and PollutionPoisoning as they were removed from the game
+- Minor change to output package folder
 
-# v1.0.0 - 24.8.2022
+## v1.0.1 - 24.8.2022
+- Fixed images in readme
+
+## v1.0.0 - 24.8.2022
 - Initial release
 - Added in-game options menu to choose which statuses to hide
 - Will only hide the status icons that are floating above gameobjects

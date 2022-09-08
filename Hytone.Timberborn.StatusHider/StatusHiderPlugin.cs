@@ -30,9 +30,7 @@ namespace Hytone.Timberborn.StatusHider
             Log = Logger;
             ConfigFile = Config;
             InitStatusLists();
-            AddLabels();
             InitConfigs();
-            // Harmony patches
             _harmony = new Harmony(PluginId);
             _harmony.PatchAll();
 
@@ -63,7 +61,6 @@ namespace Hytone.Timberborn.StatusHider
             CharacterStatuses.AddRange(
                 new List<StatusInfo>()
                 {
-                    new StatusInfo() { ToggleValue = false, Name = "DisableBroken", Description = "Disable the icon of Broken.", DefaultValue = false, SpriteNames = new string[]{"Broken" }, LocKey = StatusHiderMenu.BrokenOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableBrokenTeeth", Description = "Disable the icon of Broken Teeth.", DefaultValue = false, SpriteNames = new string[]{"BrokenTeeth" }, LocKey = StatusHiderMenu.BrokenTeethOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableDeath", Description = "Disable the icon of Death.", DefaultValue = false, SpriteNames = new string[]{"Death" }, LocKey = StatusHiderMenu.DeathOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableExhaustion", Description = "Disable the icon of Exhaustion.", DefaultValue = false, SpriteNames = new string[]{"Exhaustion" }, LocKey = StatusHiderMenu.ExhaustionOptionLocKey },
@@ -72,8 +69,6 @@ namespace Hytone.Timberborn.StatusHider
                     new StatusInfo() { ToggleValue = false, Name = "DisableNoControlSignal", Description = "Disable the icon of No Control Signal.", DefaultValue = false, SpriteNames = new string[]{"NoControlSignal" }, LocKey = StatusHiderMenu.NoControlSignalOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableOutOfEnergy", Description = "Disable the icon of Out Of Energy.", DefaultValue = false, SpriteNames = new string[]{"OutOfEnergy" }, LocKey = StatusHiderMenu.OutOfEnergyOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableOutOfFuel", Description = "Disable the icon of Out Of Fuel.", DefaultValue = false, SpriteNames = new string[]{"OutOfFuel" }, LocKey = StatusHiderMenu.OutOfFuelOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisablePollutedMechanisms", Description = "Disable the icon of Polluted Mechanisms.", DefaultValue = false, SpriteNames = new string[]{"PollutedMechanisms" }, LocKey = StatusHiderMenu.PollutedMechanismsOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisablePollutionPoisoning", Description = "Disable the icon of Pollution Poisoning.", DefaultValue = false, SpriteNames = new string[]{"PollutionPoisoning" }, LocKey = StatusHiderMenu.PollutionPoisoningOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableStranded", Description = "Disable the icon of Stranded.", DefaultValue = false, SpriteNames = new string[]{"Stranded" }, LocKey = StatusHiderMenu.StrandedOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableWater", Description = "Disable the icon of Thirst.", DefaultValue = false, SpriteNames = new string[]{"Water", "Thirst" }, LocKey = StatusHiderMenu.WaterOptionLocKey }
                 }
@@ -109,41 +104,6 @@ namespace Hytone.Timberborn.StatusHider
                                                 defaultValue,
                                                 description)
                                           .Value;
-        }
-
-        /// <summary>
-        /// Adds localization labels used by the mod to the game
-        /// </summary>
-        private void AddLabels()
-        {
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.MenuHeaderLocKey, "Status Hider Options");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.BuildingsHeaderLocKey, "Building Statuses");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.CharactersHeaderLocKey, "Character Statuses");
-
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.WarehouseFullOptionLocKey, "Disable Warehouse Full icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.PauseOptionLocKey, "Disable Paused bulding icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.NoPowerOptionLocKey, "Disable Unpowered building icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.UnreachableOptionLocKey, "Disable Unreachable building icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.EmptyBuildingOptionLocKey, "Disable Empty Building icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.FloodedOptionLocKey, "Disable Flooded building icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.NoRecipeOptionLocKey, "Disable Nothing To Do/No Recipe icons.");
-            //TimberAPI.Localization.AddLabel(StatusHiderMenu.NothingToDoOptionLocKey, "Disable Nothing to do icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.NeedsWaterOptionLocKey, "Disable Needs water icons.");
-
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.BrokenOptionLocKey, "Disable Broken icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.BrokenTeethOptionLocKey, "Disable Broken Teeth icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.DeathOptionLocKey, "Disable Death icons");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.ExhaustionOptionLocKey, "Disable Exhaustion icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.FoodOptionLocKey, "Disable Hunger icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.LackOfNutrientsOptionLocKey, "Disable Lack of Nutrients icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.InjuryOptionLocKey, "Disable Injury icons");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.NoControlSignalOptionLocKey, "Disable No Control Signal icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.OutOfEnergyOptionLocKey, "Disable Out of Energy icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.OutOfFuelOptionLocKey, "Disable Out of Fuel icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.PollutedMechanismsOptionLocKey, "Disable Polluted Mechanisms icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.PollutionPoisoningOptionLocKey, "Disable Pollution Poisoning icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.StrandedOptionLocKey, "Disable Stranded icons.");
-            TimberAPI.Localization.AddLabel(StatusHiderMenu.WaterOptionLocKey, "Disable Thirst icons.");
         }
     }
 }

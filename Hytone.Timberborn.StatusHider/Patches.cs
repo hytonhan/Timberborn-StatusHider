@@ -52,7 +52,6 @@ namespace Hytone.Timberborn.StatusHider
                 bool toggleValue,
                 StatusIconCycler __instance)
             {
-                // status.Sprite.name == spriteNames  
                 if (Array.IndexOf(spriteNames, status.Sprite.name) > -1&& toggleValue)
                 {
                     if (__instance._shownIconStatus == status)

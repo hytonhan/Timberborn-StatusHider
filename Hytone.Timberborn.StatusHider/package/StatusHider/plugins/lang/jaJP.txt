@@ -1,7 +1,7 @@
 ﻿ID,Text,Comment
 statushider.menuheader,通知アイコン非表示設定, - Status Hider Options
-statushider.buildingsheader,建物関連で非表示するアイコンを選択してください。,全てに「非表示にする」をつけると可読性が下がるのでここにまとめた。 - Building Statuses
-statushider.charactersheader,住民関連で非表示するアイコンを選択してください。,全てに「非表示にする」をつけると可読性が下がるのでここにまとめた。 - Character Statuses
+statushider.buildingsheader,建物関連で非表示にするアイコン。,全てに「非表示にする」をつけると可読性が下がるのでここにまとめた。 - Building Statuses
+statushider.charactersheader,住民関連で非表示にするアイコン。,全てに「非表示にする」をつけると可読性が下がるのでここにまとめた。 - Character Statuses
 statushider.warehousefulloption,「これ以上収納できません」, - Disable Warehouse Full icons.
 statushider.disablepauseoption,「停止中」, - Disable Paused bulding icons.
 statushider.nopoweroption,「動力がない」, - Disable Unpowered building icons.

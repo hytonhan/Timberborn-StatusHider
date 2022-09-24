@@ -21,6 +21,13 @@ github page. Any feedback is highly appreciated!
 
 # Changelog
 
+## v2.0.0 - 23.9.2022
+- Updated mod to work with TimberAPI v0.5
+- Added Not Enought Science Points status
+
+## v1.1.2 - 8.9.2022
+- Fixed typo in japanese translation
+
 ## v1.1.1 - 8.9.2022
 - Added japanese translations (thanks you sukunabikona!)
 

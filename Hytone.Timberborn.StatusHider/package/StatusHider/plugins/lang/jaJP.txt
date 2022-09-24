@@ -24,3 +24,4 @@ statushider.outoffueloption,「燃料切れ」, - Disable Out of Fuel icons.
 statushider.pollutedmechanismsoption,「からくりが汚れた」, - 未使用？ - Disable Polluted Mechanisms icons.
 statushider.pollutionpoisoningoption,「汚染で害を受けた」, - 未使用？ - Disable Pollution Poisoning icons.
 statushider.strandedoption,「立ち往生」, - Disable Stranded icons.
+statushider.notenoughscience,「科学ポイント不足のため動作不可」,-

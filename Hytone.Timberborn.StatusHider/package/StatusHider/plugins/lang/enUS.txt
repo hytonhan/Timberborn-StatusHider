@@ -24,3 +24,4 @@ statushider.outoffueloption,Disable Out of Fuel icons.
 statushider.pollutedmechanismsoption,Disable Polluted Mechanisms icons.
 statushider.pollutionpoisoningoption,Disable Pollution Poisoning icons.
 statushider.strandedoption,Disable Stranded icons.
+statushider.notenoughscience, Disable Not enough science icons.

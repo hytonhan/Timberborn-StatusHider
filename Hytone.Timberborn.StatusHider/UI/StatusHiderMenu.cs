@@ -1,7 +1,7 @@
 ﻿using System;
+using TimberApi.UiBuilderSystem;
+using TimberApi.UiBuilderSystem.ElementSystem;
 using Timberborn.CoreUI;
-using TimberbornAPI.UIBuilderSystem;
-using TimberbornAPI.UIBuilderSystem.ElementSystem;
 using UnityEngine.UIElements;
 using static UnityEngine.UIElements.Length.Unit;
 
@@ -25,6 +25,7 @@ namespace Hytone.Timberborn.StatusHider.UI
         public static readonly string FloodedOptionLocKey = "statushider.floodedoption";
         public static readonly string NoRecipeOptionLocKey = "statushider.norecipeoption";
         public static readonly string NeedsWaterOptionLocKey = "statushider.needswateroption";
+        public static readonly string NotEnoughScienceOptionLocKey = "statushider.notenoughscience";
 
         public static readonly string BrokenOptionLocKey = "statushider.brokenoption";
         public static readonly string BrokenTeethOptionLocKey = "statushider.brokenteethoption";

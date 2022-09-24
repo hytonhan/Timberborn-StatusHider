@@ -4,19 +4,19 @@ using BepInEx.Logging;
 using HarmonyLib;
 using Hytone.Timberborn.StatusHider.UI;
 using System.Collections.Generic;
-using TimberbornAPI;
-using TimberbornAPI.Common;
+using TimberApi.ConsoleSystem;
+using TimberApi.ModSystem;
 
 namespace Hytone.Timberborn.StatusHider
 {
     [BepInPlugin(PluginId, PluginName, PluginVersion)]
-    [BepInDependency("com.timberapi.timberapi")]
+    //[BepInDependency("com.timberapi.timberapi")]
     [HarmonyPatch]
-    public class StatusHiderPlugin : BaseUnityPlugin
+    public class StatusHiderPlugin : BaseUnityPlugin, IModEntrypoint
     {
         public const string PluginId = "hytone.plugins.statushider";
         public const string PluginName = "StatusHider";
-        public const string PluginVersion = "1.1.1";
+        public const string PluginVersion = "2.0.0";
 
         internal static ManualLogSource Log;
         private static Harmony _harmony;
@@ -25,7 +25,7 @@ namespace Hytone.Timberborn.StatusHider
         public static List<StatusInfo> BuildingStatusThings = new List<StatusInfo>();
         public static List<StatusInfo> CharacterStatuses = new List<StatusInfo>();
 
-        public void Awake()
+        public void Entry(IMod mod, IConsoleWriter consoleWriter)
         {
             Log = Logger;
             ConfigFile = Config;
@@ -34,7 +34,6 @@ namespace Hytone.Timberborn.StatusHider
             _harmony = new Harmony(PluginId);
             _harmony.PatchAll();
 
-            TimberAPI.DependencyRegistry.AddConfigurator(new UIConfigurator(), SceneEntryPoint.Global);
             Log.LogInfo($"Loaded {PluginName}.");
         }
 
@@ -54,7 +53,8 @@ namespace Hytone.Timberborn.StatusHider
                     new StatusInfo() { ToggleValue = false, Name = "DisableFlooded", Description = "Disable the icon of Flooded Building.", DefaultValue = false, SpriteNames = new string[]{"FloodedBuilding" }, LocKey = StatusHiderMenu.FloodedOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableNoRecipeAndNothingToDo", Description = "Disable the icon of No Recipe Selected and Nothing To Do.", DefaultValue = false, SpriteNames = new string[]{"NothingToDo" }, LocKey = StatusHiderMenu.NoRecipeOptionLocKey },
                     new StatusInfo() { ToggleValue = false, Name = "DisableBuildingNeedsWater", Description = "Disable the icon of Building Needs Water.", DefaultValue = false, SpriteNames = new string[]{"BuildingNeedsWater" }, LocKey = StatusHiderMenu.NeedsWaterOptionLocKey },
-                    new StatusInfo() { ToggleValue = false, Name = "DisableLackOfNutrients", Description = "Disable the icon of Lack Of Nutrients.", DefaultValue = false, SpriteNames = new string[]{"LackOfNutrients" }, LocKey = StatusHiderMenu.LackOfNutrientsOptionLocKey }
+                    new StatusInfo() { ToggleValue = false, Name = "DisableLackOfNutrients", Description = "Disable the icon of Lack Of Nutrients.", DefaultValue = false, SpriteNames = new string[]{"LackOfNutrients" }, LocKey = StatusHiderMenu.LackOfNutrientsOptionLocKey },
+                    new StatusInfo() { ToggleValue = false, Name = "DisableNotEnoughScience", Description = "Disable the icon of Not Enough Science.", DefaultValue = false, SpriteNames = new string[]{"NotEnoughScience" }, LocKey = StatusHiderMenu.NotEnoughScienceOptionLocKey }
                 }
             );
 

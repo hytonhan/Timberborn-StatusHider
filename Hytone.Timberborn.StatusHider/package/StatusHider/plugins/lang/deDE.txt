@@ -1,0 +1,27 @@
+﻿ID,Text,Comment
+statushider.menuheader,Status Ausblenden Optionen
+statushider.buildingsheader,Gebäude-Status
+statushider.charactersheader,Biber-/Golem-Status
+statushider.warehousefulloption,Deaktiviere Symbol Gebäude ist voll.
+statushider.disablepauseoption,Deaktiviere Symbol Ausgeschaltetes Gebäude.
+statushider.nopoweroption,Deaktiviere Symbol Gebäude benötigt Energie.
+statushider.ureachableoption,Deaktiviere Symbol Nicht verbundenes Gebäude.
+statushider.emptybuildingoption,Deaktiviere Symbol Gebäude räumen.
+statushider.floodedoption,Deaktiviere Symbol Überflutetes Gebäude.
+statushider.norecipeoption,Deaktiviere Symbol Keine Aufgaben/Keine Anleitung.
+statushider.needswateroption,Deaktiviere Symbol Gebäude benötigt Wasser.
+statushider.foodoption,Deaktiviere Symbol Hunger.
+statushider.wateroption,Deaktiviere Symbol Durst.
+statushider.brokenoption,Deaktiviere Symbol Beschädigt.
+statushider.brokenteethoption,Deaktiviere Symbol Abgebrochene Zähne.
+statushider.deathoption,Deaktiviere Symbol Tod.
+statushider.exhaustionoption,Deaktiviere Symbol Erschöpfung.
+statushider.lackofnutrientsoption,Deaktiviere Symbol Zucht gestoppt.
+statushider.injuryoption,Deaktiviere Symbol Verletzung.
+statushider.nocontrolsignaloption,Deaktiviere Symbol Benötigt Kontrollsignal.
+statushider.outofenergyoption,Deaktiviere Symbol Benötigt Energie.
+statushider.outoffueloption,Deaktiviere Symbol Benötigt Kraftstoff.
+statushider.pollutedmechanismsoption,Deaktiviere Polluted Mechanisms Symbol.
+statushider.pollutionpoisoningoption,Deaktiviere Pollution Poisoning Symbol.
+statushider.strandedoption,Deaktiviere Symbol Gestrandet.
+statushider.notenoughscience,Deaktiviere Symbol Benötigt Wissenschaftspunkte.

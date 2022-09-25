@@ -16,7 +16,7 @@ namespace Hytone.Timberborn.StatusHider
     {
         public const string PluginId = "hytone.plugins.statushider";
         public const string PluginName = "StatusHider";
-        public const string PluginVersion = "2.0.0";
+        public const string PluginVersion = "2.0.1";
 
         internal static ManualLogSource Log;
         private static Harmony _harmony;

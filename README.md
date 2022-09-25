@@ -21,6 +21,9 @@ github page. Any feedback is highly appreciated!
 
 # Changelog
 
+## v2.0.1 - 25.9.2022
+- Added German localization (thanks juf0816!)
+
 ## v2.0.0 - 23.9.2022
 - Updated mod to work with TimberAPI v0.5
 - Added Not Enought Science Points status

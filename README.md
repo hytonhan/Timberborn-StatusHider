@@ -21,6 +21,9 @@ github page. Any feedback is highly appreciated!
 
 # Changelog
 
+## v2.1.0 - 22.10.2022
+- Updated the Unreachable Building psrite name so it works again
+
 ## v2.0.1 - 25.9.2022
 - Added German localization (thanks juf0816!)
 
